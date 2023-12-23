@@ -1,0 +1,78 @@
+/* Header.css */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff; /* Set the overall background color to white */
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.country-dropdown {
+  margin-right: 10px;
+}
+
+.country-dropdown select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.notification-button {
+  margin-right: 10px;
+}
+
+.notification-button button {
+  padding: 8px;
+  background-color: #4CAF50; /* Green color, you can change it */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-section img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-info {
+  margin-right: 10px;
+}
+
+.profile-info p {
+  margin: 0;
+}
+
+.profile-info .profile-name {
+  font-weight: bold;
+}
+
+.profile-info .profile-role {
+  color: #888; /* Set a color for the role text */
+}
+
+.profile-dropdown select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+

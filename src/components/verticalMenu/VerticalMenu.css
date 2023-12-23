@@ -1,0 +1,44 @@
+/* VerticalMenu.css */
+
+.vertical-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  color: #fff;
+  width: 200px;
+  height: 100vh;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 15px; /* Rounded corners */
+}
+
+.tab:hover {
+  background-color: #555;
+}
+
+.tab.active-tab {
+  background-color: #0D1A8B;
+  color: #fff; /* Text turns white when clicked */
+}
+
+.tab-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.tab-text {
+  font-size: 16px;
+}

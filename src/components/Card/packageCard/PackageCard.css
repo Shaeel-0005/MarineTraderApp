@@ -1,0 +1,47 @@
+/* Add this CSS to your existing stylesheet or create a new one */
+
+.package-cards {
+    display: flex;
+    gap: 20px; /* Adjust the gap between cards as needed */
+  }
+  
+  .package-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px; /* Adjust the card width as needed */
+  }
+  
+  .package-card h1 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .package-card h2 {
+    margin-bottom: 15px;
+    color: #007f00; /* Green color for titles */
+  }
+  
+  .package-card > div {
+    margin-bottom: 15px;
+  }
+  
+  .package-card > div h2 {
+    color: #007f00; /* Green color for subheadings */
+  }
+  
+  .package-card p {
+    position: relative;
+    padding-left: 20px; /* Adjust the padding for the green ticket */
+  }
+  
+  .package-card p:before {
+    content: '\2022'; /* Unicode character for a bullet point */
+    color: #007f00; /* Green color for the bullet point */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 10px; /* Adjust the distance between the bullet point and text */
+  }
+  

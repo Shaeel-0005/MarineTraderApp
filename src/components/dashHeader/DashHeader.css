@@ -1,0 +1,22 @@
+/* DashHeader.css */
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right input {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
