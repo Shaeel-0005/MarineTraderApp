@@ -9,18 +9,23 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ResetPassword from './pages/resetPassword/ResetPassword';
+import TradeSeller from './pages/Sellers/TradeSeller/tradeSeller';
+import PrivateSeller from './pages/Sellers/PrivateSeller/privateSeller';
 
 function App() {
   return (
     <Router>
       
-      <Header/>
+      {/* <Header/> */}
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Registration/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/reset-password" element={<ResetPassword/>} />
+
+      <Route path="/trade-seller" element={<TradeSeller/>} />
+      <Route path="/private-seller" element={<PrivateSeller/>} />
     </Routes>
     <Footer/>
   </Router>

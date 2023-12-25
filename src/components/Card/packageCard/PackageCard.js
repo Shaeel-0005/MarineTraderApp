@@ -49,15 +49,21 @@ const PackageCard = () => {
           </h1>
           <h2 style={{ color: card.color }}>{card.title}</h2>
 
-          <div>
-            <button
-              style={{
+          <div  style={{
+                display: 'flex',
+                flexDirection: 'column',
                 backgroundColor: '#E2E5FD',
                 padding: '15px',
                 borderRadius: '20px',
+                border: 'none', // Remove the border
+              }}>
+            <button
+              style={{
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
+                backgroundColor: '#E2E5FD',
+                padding: '15px',
+                borderRadius: '20px',
                 border: 'none', // Remove the border
               }}
             >

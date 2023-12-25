@@ -1,0 +1,35 @@
+.registration-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .options-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .option {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .option.selected {
+    border-bottom: 2px solid blue;
+  }
+  .next-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0D1A8B; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .next-button:hover {
+    background-color: #084276; /* Darker blue on hover */
+  }
+  

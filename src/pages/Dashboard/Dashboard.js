@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import VerticalMenu from '../../components/verticalMenu/VerticalMenu';
 import DashHeader from '../../components/dashHeader/DashHeader';
 import CategoryLists from '../../components/categoryList/CategoryList';
 
+
 export default function Dashboard() {
+
+  const location = useLocation();
+  const userName = new URLSearchParams(location.search).get('name');
+
+
   const [activeTab, setActiveTab] = useState(null);
 
   const handleTabClick = (tabId) => {
@@ -13,6 +20,7 @@ export default function Dashboard() {
   return (
     <div style={{ display: 'flex', backgroundColor: '#F6F6F6', padding: 10 }}>
       <VerticalMenu onTabClick={handleTabClick} />
+      <h1>Hello {userName} </h1>
       <div>
         {activeTab === 1 /* ID for "buying" tab */ ? (
           <>

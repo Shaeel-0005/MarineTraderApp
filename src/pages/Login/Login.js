@@ -1,12 +1,48 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
-export default function Login() {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
+  };
+
+  const handleLogin = async () => {
+    // Replace this with your actual login logic
+    // For example, you can use fetch to send a login request to your backend
+
+    // Dummy login credentials
+    const credentials = {
+      email: 'sheranmalik08@gmail.com',
+      password: 'malik123',
+    };
+
+    try {
+      // Replace with your actual API endpoint
+      const response = await fetch('http://127.0.0.1:8000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Use React Router to navigate to the dashboard
+        console.log(data.user.name)
+        navigate('/dashboard?name=' + data.user.name);
+      } else {
+        // Handle login error
+        alert('Login failed:', data.error);
+      }
+    } catch (error) {
+      alert('Error during login:', error);
+    }
   };
 
   return (
@@ -59,9 +95,8 @@ export default function Login() {
             </span>
           </div>
 
-          <input
-            type='submit'
-            value={"Login"}
+          <button
+            onClick={handleLogin}
             style={{
               width: '100%',
               padding: '15px', // Increased padding
@@ -71,7 +106,9 @@ export default function Login() {
               borderRadius: '5px',
               cursor: 'pointer',
             }}
-          />
+          >
+            Login
+          </button>
 
           <p style={{ color: '#696E9D', textAlign: 'center' }}>
             Don't have an account? <Link to="/signup">Sign up</Link>
@@ -90,4 +127,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;
