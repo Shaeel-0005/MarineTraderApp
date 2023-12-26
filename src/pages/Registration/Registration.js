@@ -18,7 +18,7 @@ const Registration = () => {
       <div style={{ width: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <h1>Choose a seller type</h1>
         <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
-          <Link to="/private-signup" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/private-seller" style={{ textDecoration: 'none', color: 'inherit' }}>
             <div
               className={`option ${selectedOption === 'private' ? 'selected' : ''}`}
               onClick={() => handleOptionClick('private')}
@@ -33,7 +33,7 @@ const Registration = () => {
             </div>
           </Link>
 
-          <Link to="/trade-signup" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/trade-seller" style={{ textDecoration: 'none', color: 'inherit' }}>
             <div
               className={`option ${selectedOption === 'trade' ? 'selected' : ''}`}
               onClick={() => handleOptionClick('trade')}
