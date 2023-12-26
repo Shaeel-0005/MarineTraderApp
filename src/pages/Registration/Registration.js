@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import './Registration.css';
+
+import PrivateSVG from '../../assets/private.svg';
+import TradeSVG from '../../assets/tradeseller.svg';
 
 const Registration = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -9,54 +12,42 @@ const Registration = () => {
     setSelectedOption(option);
   };
 
-  const renderContent = () => {
-    if (selectedOption === 'private') {
-      return (
-        <div>
-          <div>This is the Private Seller content</div>
-          {/* Add a Next button for Private Seller */}
-          <Link to="/private-signup">
-            <button className="next-button">Next</button>
-          </Link>
-        </div>
-      );
-    } else if (selectedOption === 'trade') {
-      return (
-        <div>
-          <div>This is the Trade Seller content</div>
-          {/* Add a Next button for Trade Seller */}
-          <Link to="/trade-signup">
-            <button className="next-button">Next</button>
-          </Link>
-        </div>
-      );
-    } else {
-      return <div>Please select an option above</div>;
-    }
-  };
-
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       {/* Left side (Registration options) */}
       <div style={{ width: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-        <h2>Registration Page</h2>
+        <h1>Choose a seller type</h1>
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+          <Link to="/private-signup" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div
+              className={`option ${selectedOption === 'private' ? 'selected' : ''}`}
+              onClick={() => handleOptionClick('private')}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', border: '1px solid blue', padding: '15px', borderRadius: '5px' }}
+            >
+              <img
+                src={PrivateSVG}
+                alt="Private"
+                style={{ width: '50px', height: '50px' }}
+              />
+              Private
+            </div>
+          </Link>
 
-        <div className="options-container">
-          <div
-            className={`option ${selectedOption === 'private' ? 'selected' : ''}`}
-            onClick={() => handleOptionClick('private')}
-          >
-            Private Seller
-          </div>
-          <div
-            className={`option ${selectedOption === 'trade' ? 'selected' : ''}`}
-            onClick={() => handleOptionClick('trade')}
-          >
-            Trade Seller
-          </div>
+          <Link to="/trade-signup" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div
+              className={`option ${selectedOption === 'trade' ? 'selected' : ''}`}
+              onClick={() => handleOptionClick('trade')}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', border: '1px solid blue', padding: '15px', borderRadius: '5px' }}
+            >
+              <img
+                src={TradeSVG}
+                alt="Trade"
+                style={{ width: '50px', height: '50px' }}
+              />
+              Trade
+            </div>
+          </Link>
         </div>
-
-        {renderContent()}
       </div>
 
       {/* Right side (Image) */}
